@@ -1,25 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import User from "./UserComponent";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const people = [
+        {name: "pesho", age: 135, color:"teal"},
+        {name: "gosho", age: 135, color:"orange"},
+        {name: "kotka", age: 135, color:"blue"}
+    ];
+
+    const mappedTags = people.map(e => <User name={e.name} age={e.age} color={e.color}></User>)
+
+    return (
+        <>
+            {mappedTags}
+        </>
+    );
 }
 
 export default App;
